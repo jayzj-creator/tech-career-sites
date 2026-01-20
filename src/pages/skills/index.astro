@@ -1,12 +1,29 @@
 ---
+// Import your skills data
+import { skills } from '../../data/skills.js';
 ---
-<html>
-  <head>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skills</title>
-  </head>
-  <body>
-    <h1>Skills Page</h1>
-    <p>This route works.</p>
-    <a href="/">← Back home</a>
-  </body>
+</head>
+<body>
+    <h1>My Skills</h1>
+    
+    <ul>
+        {skills.map((skill) => (
+            <li>
+                <h2>
+                    <a href={`/skills/${skill.slug}`}>
+                        {skill.name}
+                    </a>
+                </h2>
+                <p>{skill.description}</p>
+            </li>
+        ))}
+    </ul>
+</body>
 </html>
